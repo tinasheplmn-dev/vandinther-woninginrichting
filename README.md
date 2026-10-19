@@ -57,6 +57,8 @@ node server.js            # http://localhost:8198
 
 Uitrollen: de map zoals hij is op Vercel (of elke statische host). `vercel.json` zet nette URL's aan; interne links gebruiken `.html`, dus het werkt ook zonder.
 
+Publieke voorbeeldlink (GitHub Pages): https://tinasheplmn-dev.github.io/vandinther-woninginrichting/ — bijwerken met `bash tools/publiceer.sh` (kopieert de site naar de repo `vandinther-woninginrichting` en pusht; `_bouw/`, `server.js` en `tools/` gaan niet mee).
+
 ## Beeld
 
 - **Sfeerbeeld (oktober 2026 vervangen)**: alle korrelige en kleine sfeer- en productbeelden zijn vervangen door hoogwaardige Unsplash-foto's (Unsplash License, vrij te gebruiken). Keuze: lichte, warme interieurs met natuurlijk licht, hout en linnen, rustige neutrale tinten. Alleen echte foto's, geen 3D-renders. Bewerkt naar webp in de maten waarin ze getoond worden (hero 1920 en 900 breed, paginakoppen 1600 en 800, kaarten 640 tot 800). Herkomst per bestand met fotograaf en link: `_bouw/stock/bronnen.md`. De vervangen beelden staan in `_bouw/oud-beeld/`.
