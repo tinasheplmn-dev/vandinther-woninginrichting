@@ -1,0 +1,100 @@
+# Van Dinther Woninginrichting: gegenereerd door _bouw/genereer/genereer.mjs, niet met de hand aanpassen.
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+AddType image/webp .webp
+AddType font/woff2 .woff2
+AddType text/plain .txt
+
+# Interne bestanden niet serveren
+<FilesMatch "^(README\.md|vercel\.json|_redirects|_headers)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Alleen op het eigen domein: altijd https en zonder www
+RewriteCond %{HTTP_HOST} ^www\.vandintherwoninginrichting\.nl$ [NC]
+RewriteRule ^ https://vandintherwoninginrichting.nl%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^vandintherwoninginrichting\.nl$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://vandintherwoninginrichting.nl%{REQUEST_URI} [R=301,L,NE]
+
+# Oude WordPress-adressen naar de nieuwe pagina's
+RewriteRule ^home/?$ / [R=301,L,NE]
+RewriteRule ^diensten/?$ / [R=301,L,NE]
+RewriteRule ^over-ons/?$ /showroom [R=301,L,NE]
+RewriteRule ^offerte/?$ /contact?type=offerte [R=301,L,NE]
+RewriteRule ^bedankt/?$ /contact [R=301,L,NE]
+RewriteRule ^bedankt-contact/?$ /contact [R=301,L,NE]
+RewriteRule ^bedankt-offerte/?$ /contact [R=301,L,NE]
+RewriteRule ^privacybeleid/?$ /privacy [R=301,L,NE]
+RewriteRule ^wand-en-plafondafwerking/?$ /wand-en-plafond [R=301,L,NE]
+RewriteRule ^pvc-vloeren/?$ /vloeren [R=301,L,NE]
+RewriteRule ^pvc-vloeren-lp/?$ /vloeren [R=301,L,NE]
+RewriteRule ^pvc-vloer-den-bosch-lp/?$ /vloeren [R=301,L,NE]
+RewriteRule ^gordijnen/?$ /raambekleding#gordijnen [R=301,L,NE]
+RewriteRule ^duo-rolgordijnen/?$ /raambekleding#duo-rolgordijnen [R=301,L,NE]
+RewriteRule ^houten-jaloezieen/?$ /raambekleding#houten-jaloezieen [R=301,L,NE]
+RewriteRule ^category/blog/?$ /blog [R=301,L,NE]
+RewriteRule ^category/projecten/?$ /projecten [R=301,L,NE]
+RewriteRule ^category/geen-categorie/?$ /blog [R=301,L,NE]
+RewriteRule ^feed/?$ /feed.xml [R=301,L,NE]
+RewriteRule ^blog/feed/?$ /feed.xml [R=301,L,NE]
+RewriteRule ^aanleg-van-vloer/?$ /projecten [R=301,L,NE]
+RewriteRule ^aanleg-donkere-vloer/?$ /projecten [R=301,L,NE]
+RewriteRule ^houten-trap/?$ /projecten [R=301,L,NE]
+RewriteRule ^gordijnen-ophangen/?$ /projecten [R=301,L,NE]
+RewriteRule ^zonwering-01/?$ /projecten [R=301,L,NE]
+RewriteRule ^zonwering-02/?$ /projecten [R=301,L,NE]
+RewriteRule ^kerkje/?$ /projecten [R=301,L,NE]
+RewriteRule ^kunstgras/?$ /projecten [R=301,L,NE]
+RewriteRule ^tapijt/?$ /projecten [R=301,L,NE]
+RewriteRule ^post-sitemap\.xml$ /sitemap.xml [R=301,L,NE]
+RewriteRule ^page-sitemap\.xml$ /sitemap.xml [R=301,L,NE]
+RewriteRule ^category-sitemap\.xml$ /sitemap.xml [R=301,L,NE]
+RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L,NE]
+RewriteRule ^wp-sitemap\.xml$ /sitemap.xml [R=301,L,NE]
+
+# Nette URL's: /vloeren.html en /index.html worden /vloeren en /
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?]
+RewriteRule ^ /%1 [R=301,L,NE]
+# Slash aan het eind eraf (behalve bij echte mappen)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+# /vloeren serveert vloeren.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ /$1.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+Header always set Cross-Origin-Opener-Policy "same-origin"
+# Tijdelijke Hostinger-adressen niet indexeren; alleen het eigen domein telt
+SetEnvIfNoCase Host ^(www\.)?vandintherwoninginrichting\.nl$ productie
+Header always set X-Robots-Tag "noindex" env=!productie
+<FilesMatch "\.woff2$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(webp|jpe?g|png|svg)$">
+  Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+</FilesMatch>
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/xml application/rss+xml text/plain
+</IfModule>
