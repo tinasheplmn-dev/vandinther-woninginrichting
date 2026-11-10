@@ -83,6 +83,8 @@
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', sluit);
     });
+    var sluitKnop = menu.querySelector('[data-menusluit]');
+    if (sluitKnop) sluitKnop.addEventListener('click', function () { sluit(); knop.focus(); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') sluit();
     });
@@ -613,6 +615,16 @@
       var bev = document.querySelector('[data-bevestiging]');
       if (bev) {
         bev.querySelector('[data-mailto]').setAttribute('href', href);
+        var kopieer = bev.querySelector('[data-kopieer]');
+        var gemeld = bev.querySelector('[data-gekopieerd]');
+        if (kopieer && navigator.clipboard) {
+          kopieer.hidden = false;
+          kopieer.onclick = function () {
+            navigator.clipboard.writeText('Aan: s.vandinther@home.nl\nOnderwerp: ' + soortTekst + ' via de website\n\n' + regels.join('\n')).then(function () {
+              if (gemeld) gemeld.textContent = 'Gekopieerd. Plak het in een mail aan s.vandinther@home.nl.';
+            });
+          };
+        }
         form.hidden = true;
         bev.hidden = false;
         bev.focus();

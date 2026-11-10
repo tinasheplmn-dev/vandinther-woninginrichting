@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog van Van Dinther Woninginrichting</title>
+  <link>https://vandintherwoninginrichting.nl/blog</link>
+  <atom:link href="https://vandintherwoninginrichting.nl/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Advies over vloeren, raambekleding en zonwering uit ’s-Hertogenbosch.</description>
+  <language>nl-NL</language>
+  <lastBuildDate>Tue, 10 Nov 2026 08:00:00 GMT</lastBuildDate>
+  <item>
+    <title>PVC vloer: waarom kiezen, en hoe wordt hij gelegd?</title>
+    <link>https://vandintherwoninginrichting.nl/pvc-vloer-in-den-bosch</link>
+    <guid isPermaLink="true">https://vandintherwoninginrichting.nl/pvc-vloer-in-den-bosch</guid>
+    <pubDate>Fri, 15 Apr 2022 08:00:00 GMT</pubDate>
+    <category>Vloeren</category>
+    <description>Waarom een PVC vloer, click of verlijmd, en zelf leggen of laten leggen? Met prijzen: zelf leggen vanaf € 34,95 per m², gelegd vanaf € 59,95 per m².</description>
+  </item>
+  <item>
+    <title>Visgraat PVC vloer: patronen, voordelen en prijs</title>
+    <link>https://vandintherwoninginrichting.nl/visgraat-pvc-vloer</link>
+    <guid isPermaLink="true">https://vandintherwoninginrichting.nl/visgraat-pvc-vloer</guid>
+    <pubDate>Mon, 11 Jul 2022 08:00:00 GMT</pubDate>
+    <category>Vloeren</category>
+    <description>Visgraat, Hongaarse punt, Weense punt of dubbele visgraat in PVC: wat is het verschil? Met de voordelen van PVC en de prijs, gelegd vanaf € 79,95 per m².</description>
+  </item>
+  <item>
+    <title>Interieurwinkel in Den Bosch: alles onder één dak</title>
+    <link>https://vandintherwoninginrichting.nl/woonwinkel-den-bosch</link>
+    <guid isPermaLink="true">https://vandintherwoninginrichting.nl/woonwinkel-den-bosch</guid>
+    <pubDate>Thu, 27 Oct 2022 08:00:00 GMT</pubDate>
+    <category>Showroom</category>
+    <description>Vloeren, wand- en plafondafwerking en raambekleding in één interieurwinkel in Den Bosch. Showroom aan De Vutter 23a, op afspraak, of advies bij u thuis.</description>
+  </item>
+  <item>
+    <title>Hoe kiest u de juiste zonwering voor uw huis?</title>
+    <link>https://vandintherwoninginrichting.nl/de-juiste-zonwering-voor-uw-huis</link>
+    <guid isPermaLink="true">https://vandintherwoninginrichting.nl/de-juiste-zonwering-voor-uw-huis</guid>
+    <pubDate>Tue, 04 Jul 2023 08:00:00 GMT</pubDate>
+    <category>Zonwering</category>
+    <description>Rolluik, zonnescherm of screen? Vijf dingen om op te letten bij het kiezen van zonwering: type, materiaal, maat en montage, stijl en budget.</description>
+  </item>
+</channel>
+</rss>

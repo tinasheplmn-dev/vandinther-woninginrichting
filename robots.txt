@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://vandintherwoninginrichting.nl/sitemap.xml
+Disallow: /

@@ -1336,3 +1336,81 @@ fieldset { border: 0; display: grid; gap: .6rem; }
 a.materiaal, a.kennis-item { transition: translate var(--duur) var(--vlot), box-shadow var(--duur) var(--vlot); }
 a.materiaal:hover, a.kennis-item:hover { translate: 0 -4px; box-shadow: 0 24px 40px -28px rgba(31, 29, 26, .5); }
 
+
+/* ==========================================================================
+   Blog (november 2026): artikelkop op donker, beeld dat de kop overlapt,
+   tekst met "In het kort" bovenaan, inhoudsopgave die meeloopt.
+   ========================================================================== */
+.artikel-kop { padding-block: clamp(3rem, 6vw, 5rem) clamp(7rem, 12vw, 10rem); }
+.artikel-kop .wrap { display: grid; gap: 1.1rem; justify-items: start; }
+.artikel-kop h1 { max-width: 22ch; }
+.artikel-lead { font-size: var(--fs-groot); color: var(--dim-op-donker); max-width: 56ch; line-height: 1.6; }
+.artikel-meta { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; margin-top: .4rem; font-size: .95rem; color: var(--dim-op-donker); }
+.artikel-meta span { display: inline-flex; align-items: center; gap: .55rem; }
+.artikel-meta span + span::before { content: ""; width: 5px; height: 5px; rotate: 45deg; background: var(--tweede); }
+.blog-kop { padding-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+
+.artikel-beeld { margin-top: calc(-1 * clamp(5rem, 9vw, 7.5rem)); position: relative; z-index: 1; }
+.artikel-beeld.kader::before { inset: 18px -14px -18px 14px; }
+.artikel-beeld.kader img { aspect-ratio: 21 / 9; }
+
+.artikel-raster { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; padding-block: clamp(3.5rem, 6vw, 5rem) var(--sectie); }
+.artikel-tekst > p:first-of-type { font-size: var(--fs-groot); color: var(--tekst); }
+.artikel-tekst h2, .artikel-tekst h3 { scroll-margin-top: 110px; }
+.artikel-tekst h3 { font-size: 1.35rem; margin-top: 1.9rem; margin-bottom: .5rem; }
+.artikel-tekst a:not(.knop) { display: inline; padding: .72rem .1rem; margin: -.72rem -.1rem; color: var(--merk-diep); font-weight: 600; text-decoration: underline; text-decoration-color: var(--merk); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.artikel-tekst a:not(.knop):hover { color: var(--inkt); }
+.artikel-tekst strong { color: var(--tekst); }
+
+.in-het-kort { margin-bottom: 2.2rem; padding: 1.5rem 1.6rem 1.6rem; border: 1.5px solid transparent; border-radius: var(--radius); background: linear-gradient(var(--kaart), var(--kaart)) padding-box, var(--goudrand) border-box; }
+.lees .in-het-kort h2 { margin: 0 0 .4rem; font-size: 1.35rem; }
+.lees .in-het-kort li { color: var(--tekst); }
+
+.artikel-patroon { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1.25rem; align-items: start; margin-top: 1rem; }
+.artikel-patroon img { width: 160px; height: auto; border-radius: var(--radius); border: 1px solid rgba(154, 116, 37, .45); }
+
+.artikel-cta { position: relative; display: grid; gap: 1.1rem; margin-block: 2.6rem; padding: 1.6rem 1.7rem; border-radius: var(--radius); background: var(--inkt); color: var(--papier); }
+.artikel-cta strong { display: block; font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.2; color: var(--papier); }
+.artikel-cta div > span { display: block; margin-top: .35rem; color: var(--dim-op-donker); }
+.artikel-cta .staal-gat { position: absolute; top: 1.1rem; right: 1.1rem; background: var(--inkt-2); }
+.artikel-cta .knop-lijn, .bevestiging .knop-lijn { border-color: rgba(246, 246, 243, .75); color: var(--papier); }
+.artikel-cta .knop-lijn:hover, .bevestiging .knop-lijn:hover { background: var(--papier); color: var(--inkt); }
+.bevestiging .form-noot { color: var(--dim-op-donker); }
+.bevestiging .form-noot:empty { display: none; }
+
+.artikel-zij { position: sticky; top: 110px; display: grid; gap: 1.1rem; }
+.zij-kop, .inhoudsopgave h2 { font-size: 1.35rem; margin-bottom: .8rem; }
+.inhoudsopgave ol { list-style: none; counter-reset: stap; }
+.inhoudsopgave li { counter-increment: stap; border-top: 1px solid var(--lijn); }
+.inhoudsopgave a { display: flex; gap: .8rem; align-items: center; min-height: 48px; padding-block: .45rem; font-weight: 600; font-size: .98rem; line-height: 1.35; }
+.inhoudsopgave a::before { content: counter(stap, decimal-leading-zero); flex: none; font-family: var(--display); font-weight: 400; color: var(--merk-diep); }
+.inhoudsopgave a:hover { color: var(--merk-diep); }
+.artikel-zij .blok p { color: var(--dim); }
+.artikel-zij .knoppen { margin-top: 1rem; }
+.artikel-zij .knop { width: 100%; white-space: normal; }
+
+.blog-rij { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.5rem; }
+.blogkaart .staal-beeld { aspect-ratio: 3 / 2; }
+.blogkaart h3 { font-size: 1.3rem; }
+
+.blog-verwijzing { margin-top: 2.4rem; max-width: 900px; }
+.blog-verwijzing .kennis-items { gap: .8rem; }
+.blog-verwijzing .kennis-item h3 { font-size: 1.15rem; }
+.kennis-item[href] { transition: border-color var(--duur) var(--vlot), translate var(--duur) var(--vlot); }
+.kennis-item[href]:hover { border-color: var(--merk); translate: 0 -2px; }
+
+@media (max-width: 1020px) {
+  .artikel-raster { grid-template-columns: minmax(0, 1fr); }
+  .artikel-zij { position: static; }
+  .inhoudsopgave { display: none; }
+}
+@media (max-width: 640px) {
+  .artikel-beeld.kader img { aspect-ratio: 4 / 3; }
+  .artikel-beeld.kader::before { inset: 12px -8px -12px 8px; }
+  .artikel-patroon { grid-template-columns: 104px minmax(0, 1fr); gap: 1rem; }
+  .artikel-patroon img { width: 104px; }
+  .artikel-cta { padding: 1.4rem 1.25rem; }
+  .artikel-cta .knop { width: 100%; white-space: normal; }
+}
+
+.heel { white-space: nowrap; }
