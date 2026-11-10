@@ -1,0 +1,59 @@
+# Van Dinther Woninginrichting
+# Zoekmachines en AI-zoekdiensten zijn welkom: zo vindt men ons ook via ChatGPT, Claude, Perplexity en Gemini.
+
+User-agent: *
+Allow: /
+
+# ChatGPT zoeken
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT, op verzoek van een gebruiker
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+# Claude zoeken
+User-agent: Claude-SearchBot
+Allow: /
+
+# Claude, op verzoek van een gebruiker
+User-agent: Claude-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity, op verzoek van een gebruiker
+User-agent: Perplexity-User
+Allow: /
+
+# Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Bing en Copilot
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# Mistral Le Chat
+User-agent: MistralAI-User
+Allow: /
+
+Sitemap: https://vandintherwoninginrichting.nl/sitemap.xml

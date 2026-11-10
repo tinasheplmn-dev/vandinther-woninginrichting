@@ -1,0 +1,452 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/over-ons",
+      "destination": "/showroom",
+      "permanent": true
+    },
+    {
+      "source": "/over-ons/",
+      "destination": "/showroom",
+      "permanent": true
+    },
+    {
+      "source": "/offerte",
+      "destination": "/contact?type=offerte",
+      "permanent": true
+    },
+    {
+      "source": "/offerte/",
+      "destination": "/contact?type=offerte",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt-contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt-contact/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt-offerte",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bedankt-offerte/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/privacybeleid",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacybeleid/",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/wand-en-plafondafwerking",
+      "destination": "/wand-en-plafond",
+      "permanent": true
+    },
+    {
+      "source": "/wand-en-plafondafwerking/",
+      "destination": "/wand-en-plafond",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloeren",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloeren/",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloeren-lp",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloeren-lp/",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloer-den-bosch-lp",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloer-den-bosch-lp/",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/gordijnen",
+      "destination": "/raambekleding#gordijnen",
+      "permanent": true
+    },
+    {
+      "source": "/gordijnen/",
+      "destination": "/raambekleding#gordijnen",
+      "permanent": true
+    },
+    {
+      "source": "/duo-rolgordijnen",
+      "destination": "/raambekleding#duo-rolgordijnen",
+      "permanent": true
+    },
+    {
+      "source": "/duo-rolgordijnen/",
+      "destination": "/raambekleding#duo-rolgordijnen",
+      "permanent": true
+    },
+    {
+      "source": "/houten-jaloezieen",
+      "destination": "/raambekleding#houten-jaloezieen",
+      "permanent": true
+    },
+    {
+      "source": "/houten-jaloezieen/",
+      "destination": "/raambekleding#houten-jaloezieen",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/category/projecten",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/category/projecten/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/category/geen-categorie",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/category/geen-categorie/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/aanleg-van-vloer",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/aanleg-van-vloer/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/aanleg-donkere-vloer",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/aanleg-donkere-vloer/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/houten-trap",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/houten-trap/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/gordijnen-ophangen",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/gordijnen-ophangen/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/zonwering-01",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/zonwering-01/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/zonwering-02",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/zonwering-02/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/kerkje",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/kerkje/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/kunstgras",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/kunstgras/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/tapijt",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/tapijt/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/vloeren/",
+      "destination": "/vloeren",
+      "permanent": true
+    },
+    {
+      "source": "/raambekleding/",
+      "destination": "/raambekleding",
+      "permanent": true
+    },
+    {
+      "source": "/zonwering/",
+      "destination": "/zonwering",
+      "permanent": true
+    },
+    {
+      "source": "/projectstoffering/",
+      "destination": "/projectstoffering",
+      "permanent": true
+    },
+    {
+      "source": "/projecten/",
+      "destination": "/projecten",
+      "permanent": true
+    },
+    {
+      "source": "/showroom/",
+      "destination": "/showroom",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/pvc-vloer-in-den-bosch/",
+      "destination": "/pvc-vloer-in-den-bosch",
+      "permanent": true
+    },
+    {
+      "source": "/visgraat-pvc-vloer/",
+      "destination": "/visgraat-pvc-vloer",
+      "permanent": true
+    },
+    {
+      "source": "/woonwinkel-den-bosch/",
+      "destination": "/woonwinkel-den-bosch",
+      "permanent": true
+    },
+    {
+      "source": "/de-juiste-zonwering-voor-uw-huis/",
+      "destination": "/de-juiste-zonwering-voor-uw-huis",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
+}
