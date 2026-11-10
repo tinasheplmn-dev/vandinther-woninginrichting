@@ -41,12 +41,18 @@ Ritme: veel lichte secties, donker alleen als ritmebreker (merkenband, reviews, 
 
 De inhoud van alle oude dienstpagina's en de vier blogs (PVC in Den Bosch, visgraat PVC, woonwinkel Den Bosch, zonwering kiezen) is verwerkt als kennisblokken op de dienstpagina's.
 
+**Blog (november 2026)**: `blog.html` plus de vier artikelen, **op dezelfde URL's als op de oude site** (`pvc-vloer-in-den-bosch`, `visgraat-pvc-vloer`, `woonwinkel-den-bosch`, `de-juiste-zonwering-voor-uw-huis`), zodat hun opgebouwde vindbaarheid meegaat. Tekst en feiten komen uit de oude blogs, licht opgeschoond (overal "u", geen dubbelingen). Nieuw per artikel: "In het kort" bovenaan, inhoudsopgave, adviesblok halverwege, drie veelgestelde vragen met antwoorden uit dezelfde tekst, en "Meer uit de blog". Titels zijn aangescherpt zodat ze niet concurreren met de dienstpagina's. Bron: `_bouw/genereer/blog.mjs`. Een nieuw artikel = een blok toevoegen aan `BLOGS` en genereren.
+
 ## Techniek
 
 - Platte HTML, CSS en JS. Geen build nodig om de site te draaien.
 - De pagina's worden gegenereerd uit `_bouw/genereer/` (gedeelde header, footer, reviews, prijzen). Na een tekstwijziging: `node _bouw/genereer/genereer.mjs` vanuit de projectmap. Dat schrijft ook `sitemap.xml`, `robots.txt` en de legpatroon-tekeningen. Je kunt de HTML ook direct aanpassen, maar dan wordt die bij een volgende generatie overschreven.
 - Motion: `js/main.js` bevat de motion-laag (fail-open reveals, stagger, hero-opening) plus de stalenwaaier, de signatuur, de live status ("Vandaag op afspraak tot 21.00"), carrouselknoppen en het formulier.
 - Formulier: bouwt een net bericht op en opent het mailprogramma naar s.vandinther@home.nl (keuze showroomafspraak / advies en inmeten thuis / offerte, plus interesse). Links met `?type=` en `?onderwerp=` vullen de keuze vooraf in.
+- **Doorverwijzingen**: alle oude WordPress-URL's gaan met een 301 naar de nieuwe pagina's. Eén lijst in `genereer.mjs` schrijft `_redirects` (Cloudflare Pages, Netlify) en `vercel.json`. `server.js` leest `_redirects` ook, dus lokaal testen kan: `bash tools/test-doorverwijzingen.sh http://localhost:8198`.
+- **AI-vindbaarheid**: `robots.txt` nodigt zoek- en AI-crawlers expliciet uit, `llms.txt` vat het bedrijf feitelijk samen, `feed.xml` voor de blog, IndexNow-sleutel (`tools/indexnow.sh` na livegang). Bedrijfs-JSON-LD met geo (OpenStreetMap, De Vutter 23A), KvK, kennisgebieden en dienstencatalogus. BlogPosting en FAQPage op de artikelen, FAQPage ook op raambekleding, zonwering en wand en plafond.
+- **Beveiliging**: `_headers` en `vercel.json` zetten een strikte Content-Security-Policy (alleen eigen scripts), HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy en COOP. Geen inline scripts, geen cookies, geen externe bronnen. `.well-known/security.txt`. Werkt alleen op een host die headers leest, niet op GitHub Pages.
+- **Interne links** wijzen naar de nette URL (`vloeren`, niet `vloeren.html`); de generator zet dat om. `sitemap.xml` krijgt per pagina de datum van de laatste echte wijziging (`_bouw/genereer/lastmod.json`).
 - SEO: eigen title en description per pagina met lokale termen, HomeAndConstructionBusiness-JSON-LD met adres, openingstijden en aggregateRating 5,0 / 13, Service-, FAQPage- en BreadcrumbList-JSON-LD, sitemap, robots, OG-beeld.
 
 ## Draaien en uitrollen
@@ -55,9 +61,9 @@ De inhoud van alle oude dienstpagina's en de vier blogs (PVC in Den Bosch, visgr
 node server.js            # http://localhost:8198
 ```
 
-Uitrollen: de map zoals hij is op Vercel (of elke statische host). `vercel.json` zet nette URL's aan; interne links gebruiken `.html`, dus het werkt ook zonder.
+Voorbeeldlink (GitHub Pages, op noindex): https://tinasheplmn-dev.github.io/vandinther-woninginrichting/. Bijwerken met `bash tools/publiceer.sh`.
 
-Publieke voorbeeldlink (GitHub Pages): https://tinasheplmn-dev.github.io/vandinther-woninginrichting/ — bijwerken met `bash tools/publiceer.sh` (kopieert de site naar de repo `vandinther-woninginrichting` en pusht; `_bouw/`, `server.js` en `tools/` gaan niet mee).
+Live: `bash tools/publiceer.sh live` zet de site zonder noindex op de branch `live` van dezelfde repo. Koppel daar Cloudflare Pages (advies, gratis ook zakelijk) of Netlify aan, zonder bouwcommando. Vercel kan ook, maar alleen met een betaald plan voor zakelijk gebruik. GitHub Pages niet als livehost: geen 301's en geen headers. Het volledige stappenplan, inclusief domeinverhuizing, DNSSEC en SPF/DMARC: `_bouw/livegang-en-voorstellen.md`.
 
 ## Beeld
 
@@ -84,7 +90,9 @@ Eigen sectie op de home, in de stalenwaaier-stijl: een staalkaart met gouden ver
 10. **Merken**: de site noemt Gelasta, Balterio, Parador en Bodiax (oude site). Een Facebook-actie van oktober 2026 noemt ook Belakos, Sense en Liberty. Lijst bevestigen.
 11. **Facebook**: er bestaat een tweede, oudere pagina (Rosmalen). De site linkt naar facebook.com/vandintherwoninginrichting.
 12. **Privacyverklaring**: nieuw en kort geschreven, past bij deze site (geen tracking, formulier via mail). Laten nalezen.
-13. **Coördinaten** (geo) staan niet in de JSON-LD omdat ze niet in de bron stonden.
+13. **Coördinaten** staan nu in de JSON-LD, opgezocht in OpenStreetMap (huisnummer 23A). Klopt het huisnummer niet (zie punt 3), dan ook dit aanpassen.
+14. **Blogs**: titels aangescherpt (bijvoorbeeld "PVC vloer: waarom kiezen, en hoe wordt hij gelegd?") en teksten licht opgeschoond. Graag laten nalezen, net als de nieuwe veelgestelde vragen op raambekleding, zonwering en wand en plafond.
+15. **Livegang**: Blubmedia levert verhuistoken en back-up; hosting daar loopt tot en met 31 december 2026. Hostkeuze en planning: `_bouw/livegang-en-voorstellen.md`. Conceptantwoord van Maya: `_bouw/antwoord-blubmedia.md`.
 
 ## Keuring
 
